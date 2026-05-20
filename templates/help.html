@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+  .help-hero {
+   background: linear-gradient(135deg, #1e3a8a, #2563eb, #60a5fa);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  .help-box {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    padding: 25px;
+    height: 100%;
+    transition: 0.3s;
+  }
+
+  .help-box:hover {
+    transform: translateY(-5px);
+  }
+
+  .help-icon {
+    font-size: 35px;
+    color: #b30000;
+    margin-bottom: 10px;
+  }
+</style>
+
+<!-- HERO -->
+<div class="help-hero">
+  <h1>Help & Support</h1>
+  {% comment %} <p>We are here to guide you anytime</p> {% endcomment %}
+  <p>Get reliable support for blood donation, requests, and emergency assistance anytime.</p>
+</div>
+
+<!-- HELP SECTIONS -->
+<div class="container my-5">
+  <div class="row g-4">
+
+    <!-- Section 1 -->
+    <div class="col-md-4">
+      <div class="help-box text-center">
+        <div class="help-icon">🩸</div>
+        <h5>Donor Registration</h5>
+        <p>
+          Register as a blood donor by filling your personal details and blood group information.
+        </p>
+      </div>
+    </div>
+       <br>
+       <br>
+
+    <!-- Section 2 -->
+    <div class="col-md-4">
+      <div class="help-box text-center">
+        <div class="help-icon">🚑</div>
+        <h5>Emergency Blood Request</h5>
+        <p>
+          In case of emergency, submit a request and our team will contact available donors immediately.
+        </p>
+      </div>
+    </div>
+        <br>
+       <br>
+
+    <!-- Section 3 -->
+    <div class="col-md-4">
+      <div class="help-box text-center">
+        <div class="help-icon">📞</div>
+        <h5>Contact Support</h5>
+        <p>
+          You can contact our support team anytime for help regarding blood availability.
+        </p>
+      </div>
+    </div>
+        <br>
+       <br>
+
+  </div>
+
+  <!-- EXTRA INFO -->
+  <div class="text-center mt-5">
+    <h4>Need Immediate Help?</h4>
+    <p class="text-muted">
+      Call our emergency helpline or visit nearest blood bank center.
+    </p>
+    <a href="{% url 'contact' %}" class="btn btn-danger">
+      Contact Us
+    </a>
+  </div>
+
+</div>
+
+{% endblock %}

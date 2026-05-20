@@ -1,0 +1,1 @@
+{% extends 'base.html' %}{% block content %}<div class="container"><form method="post" class="form"><h2>Blood Request Form</h2>{% csrf_token %}{% include 'form_fields.html' %}<button class="btn">Request Blood</button></form></div>{% endblock %}

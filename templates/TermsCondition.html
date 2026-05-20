@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+  .terms-hero {
+  /* 
+  background: linear-gradient(135deg, #4c1d95, #7c3aed, #a78bfa); */
+    background: linear-gradient(135deg, #0f766e, #14b8a6, #5eead4);
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  .terms-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  }
+
+  .terms-container h4 {
+    margin-top: 20px;
+    font-weight: 600;
+  }
+</style>
+
+<!-- Hero -->
+<div class="terms-hero">
+  <h1>Terms & Conditions</h1>
+  <p>Please read these terms carefully before using our services</p>
+</div>
+
+<!-- Content -->
+<div class="container my-5">
+  <div class="terms-container">
+
+    <h4>1. Acceptance of Terms</h4>
+    <p>
+      By accessing and using this Blood Bank Management System, you agree to comply with these terms and conditions.
+    </p>
+
+    <h4>2. Blood Donation Eligibility</h4>
+    <p>
+      Donors must provide accurate information and meet the medical eligibility criteria before donating blood.
+    </p>
+
+    <h4>3. User Responsibility</h4>
+    <p>
+      Users are responsible for maintaining the confidentiality of their personal information and account details.
+    </p>
+
+    <h4>4. Emergency Requests</h4>
+    <p>
+      While we strive to fulfill all blood requests, availability depends on donor supply and cannot be guaranteed at all times.
+    </p>
+
+    <h4>5. Data Privacy</h4>
+    <p>
+      Your personal information will be handled securely and used only for blood donation and emergency purposes.
+    </p>
+
+    <h4>6. Limitation of Liability</h4>
+    <p>
+      The system is not liable for delays, inaccuracies, or unavailability of blood in emergency situations.
+    </p>
+
+    <h4>7. Changes to Terms</h4>
+    <p>
+      We reserve the right to update these terms at any time without prior notice.
+    </p>
+
+    <h4>8. Contact Information</h4>
+    <p>
+      For any queries regarding these terms, please contact our support team.
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

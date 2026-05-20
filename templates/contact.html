@@ -1,0 +1,24 @@
+{% extends 'base.html' %}{% block content %}<div class="container"><form method="post" class="form"><h2>Contact Us</h2>{% csrf_token %}<label>Name</label><input name="name" required><label>Email</label><input type="email" name="email">
+<label>Phone</label>
+<input type="text" name="phone" maxlength="10" required
+       pattern="^\d{10}$"
+       oninput="validatePhone(this)">
+       
+<script>
+function validatePhone(input) {
+    let value = input.value;
+
+    // Agar non-digit hai
+    if (/[^0-9]/.test(value)) {
+        input.setCustomValidity("Only numbers are allowed");
+    }
+    // Agar digits hain but 10 se kam ya zyada
+    else if (value.length !== 10) {
+        input.setCustomValidity("Please enter 10 digit number");
+    }
+    else {
+        input.setCustomValidity("");
+    }
+}
+</script>
+<label>Message</label><textarea name="message" required></textarea><button class="btn">Send</button></form></div>{% endblock %}

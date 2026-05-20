@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+    }
+
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+
+    th {
+        background: #c62828;
+        color: white;
+    }
+
+    /* Action column width */
+    .action-col {
+        width: 260px;
+    }
+
+    /* Buttons */
+    .btn-action {
+        padding: 6px 10px;
+        text-decoration: none;
+        color: white;
+        border-radius: 5px;
+        font-size: 13px;
+        margin: 2px;
+        display: inline-block;
+    }
+
+    .lab-btn {
+        background-color: #1976d2;
+    }
+
+    .approve-btn {
+        background-color: #2e7d32;
+    }
+
+    .reject-btn {
+        background-color: #d32f2f;
+    }
+
+    .btn-action:hover {
+        opacity: 0.85;
+    }
+</style>
+
+<div class="container">
+    <h2>Donation / Approved Records</h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Blood Group</th>
+            <th>Units</th>
+            <th>Date</th>
+            <th>Status</th>
+            <th class="action-col">Action</th>
+        </tr>
+
+        {% for d in donations %}
+        <tr>
+            <td>{{ d.fullname }}</td>
+            <td>{{ d.age }}</td>
+            <td>{{ d.bloodgroup }}</td>
+            <td>{{ d.units }}</td>
+            <td>{{ d.date }}</td>
+          
+        <td>
+    {% if d.status == 'Pending' %}
+        <span style="color:orange;">Pending</span>
+
+    {% elif d.status == 'Approved' %}
+        <span style="color:green;">Approved</span>
+
+    {% elif d.status == 'Rejected' %}
+        <span style="color:red;">Rejected</span>
+
+    {% elif d.status == 'Lab Tested' %}
+        <span style="color:blue;">Lab Tested</span>
+
+    {% else %}
+        {{ d.status }}
+    {% endif %}
+</td>
+     
+  
+         <td>
+
+   
+    <a href="{% url 'lab_testing' d.id %}"
+   class="btn-action lab-btn">
+   Lab Testing
+</a>
+
+    <a href="{% url 'update_status' d.id 'Approved' %}"
+       class="btn-action approve-btn">
+       Approve
+    </a>
+
+    <a href="{% url 'update_status' d.id 'Rejected' %}"
+       class="btn-action reject-btn">
+       Reject
+    </a>
+
+</td>
+        </tr>
+
+        {% empty %}
+        <tr>
+            <td colspan="7">No donation records.</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+</div>
+
+{% endblock %}
+
+
+
+
+
+
+
+{% comment %} {% extends 'base.html' %}{% block content %}<div class="container"><h2>Donation / Approved Records</h2>
+<table><tr><th>Name</th><th>Age</th><th>Blood Group</th><th>Units</th><th>Date</th><th>Status</th>
+ <th>Action</th>
+</tr>{% for d in donations %}<tr><td>{{ d.fullname }}</td><td>{{ d.age }}</td><td>{{ d.bloodgroup }}</td><td>{{ d.units }}</td><td>{{ d.date }}</td>
+<td>{{ d.status }}</td>
+<td>{{ d.action}}</td>
+</tr>{% empty %}<tr><td colspan="6">No donation records.</td></tr>{% endfor %}</table></div>{% endblock %} {% endcomment %}

@@ -1,0 +1,234 @@
+ {% extends 'base.html' %}
+  {% block content %} 
+    {% load static %}
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body {
+        background: #f8f9fa;
+        font-family: Arial, sans-serif;
+    }
+
+    .faq-title {
+        text-align: center;
+        margin: 40px 0;
+        font-weight: bold;
+    }
+
+    .faq-item {
+        border-bottom: 1px solid #ddd;
+        padding: 15px 0;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .faq-question {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 500;
+        font-size: 18px;
+    }
+
+    .faq-question.active {
+        color: #991b1b; /* red-800 */
+    }
+
+    .faq-answer {
+        display: none;
+        padding-top: 10px;
+        color: #555;
+    }
+
+    .arrow {
+        transition: transform 0.3s;
+    }
+
+    .rotate {
+        transform: rotate(180deg);
+    }
+
+    /* Newsletter */
+    .newsletter {
+        background: #fff;
+        padding: 40px;
+        margin-top: 50px;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .newsletter input {
+        max-width: 300px;
+        margin: auto;
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+
+    <!-- FAQ List -->
+    <div class="faq-item">
+        <div class="faq-question">
+            Who can donate blood?
+            <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer">Healthy individuals aged 18-65 years, weighing at least 50 kg, and with normal hemoglobin levels can donate blood.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+         How often can I donate blood?
+            <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer">You can donate whole blood every 3 months (12 weeks). Platelet donation can be done more frequently.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+          Is blood donation safe?
+            <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer">Yes, it is completely safe. Sterile and disposable equipment is used for each donor, so there is no risk of infection.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+           How long does the donation process take?
+            <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer">The entire process takes about 30–45 minutes, while the actual blood donation takes only 8–10 minutes.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+         Does donating blood hurt?
+            <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer"> You may feel a small pinch when the needle is inserted, but the process is generally painless.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+        What should I do before donating blood?
+            <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer"> Eat a healthy meal, drink plenty of water, and avoid alcohol or smoking before donation.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+           What should I do after donating blood?
+            <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer">
+       Rest for a few minutes, drink fluids, avoid heavy exercise for 24 hours, and keep the bandage on for a few hours.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+          Can women donate blood?
+            <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer">Yes, women can donate blood if they meet the eligibility criteria and are not pregnant or anemic. </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+           Can I donate blood if I have a medical condition?
+            <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer">It depends on the condition. People with certain illnesses or infections may not be eligible. Always consult the medical staff.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">
+         How much blood is taken during donation?
+            <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer">Around 350-450 ml of blood is collected, which your body replaces within a few days.</div>
+    </div>
+
+        <div class="faq-item">
+        <div class="faq-question">
+         Can I donate blood on an empty stomach?
+            <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer"> No, it is recommended to eat before donating to avoid dizziness or weakness. </div>
+    </div>
+
+
+
+          <div class="faq-item">
+        <div class="faq-question">
+         Why is blood donation important?
+            <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer"> Blood donation helps save lives during emergencies, surgeries, and for patients with serious illnesses like anemia or cancer. </div>
+    </div>
+
+
+
+          <div class="faq-item">
+        <div class="faq-question">
+         Will I feel weak after donating blood?
+            <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer"> Most people feel fine, but some may feel slightly tired. Drinking fluids and resting helps recovery. </div>
+    </div>
+
+
+          <div class="faq-item">
+        <div class="faq-question">
+         Can I donate blood if I have a tattoo?
+            <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer"> Yes, but usually only after 6–12 months of getting the tattoo, depending on guidelines. </div>
+    </div>
+
+
+          <div class="faq-item">
+        <div class="faq-question">
+         Is there any benefit of donating blood?
+            <span class="arrow">▼</span>
+        </div>
+        <div class="faq-answer"> Yes, it helps maintain iron levels, improves blood flow, and gives a sense of helping others. </div>
+    </div>
+   
+
+
+
+</div>
+
+<script>
+    const faqItems = document.querySelectorAll(".faq-item");
+
+    faqItems.forEach(item => {
+        item.addEventListener("click", () => {
+            const question = item.querySelector(".faq-question");
+            const answer = item.querySelector(".faq-answer");
+            const arrow = item.querySelector(".arrow");
+
+            const isOpen = answer.style.display === "block";
+
+            // Close all
+            document.querySelectorAll(".faq-answer").forEach(a => a.style.display = "none");
+            document.querySelectorAll(".faq-question").forEach(q => q.classList.remove("active"));
+            document.querySelectorAll(".arrow").forEach(ar => ar.classList.remove("rotate"));
+
+            // Toggle current
+            if (!isOpen) {
+                answer.style.display = "block";
+                question.classList.add("active");
+                arrow.classList.add("rotate");
+            }
+        });
+    });
+</script>
+ {% endblock %}
+</body>

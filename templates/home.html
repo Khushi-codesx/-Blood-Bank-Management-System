@@ -1,0 +1,364 @@
+{% extends 'base.html' %}
+{% block title %}Home | BloodBridge{% endblock %}
+{% block content %}
+  {% load static %}
+    <link rel="stylesheet" href="{%static 'style.css' %}">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<section class="hero">
+<div class="container text-center py-5">
+
+  <h1 class="display-4 fw-bold text-danger mb-3">
+    Donate Blood, Save Lives
+  </h1>
+<p class="lead mx-auto text-dark" style="max-width: 800px;">
+  BloodBridge is a complete Blood Bank Management System where donors can donate blood,
+  patients can request blood, and admin can manage stock and requests.
+</p>
+
+<div class="d-flex gap-3 justify-content-center mt-4">
+
+  <a class="btn btn-danger btn-lg px-4 py-2 fw-semibold rounded-pill"
+     href="{% url 'donor_login' %}">
+    Become Donor
+  </a>
+
+  <a class="btn btn-outline-secondary btn-lg px-4 py-2 fw-semibold rounded-pill"
+     href="{% url 'patient_login' %}">
+    Need Blood
+  </a>
+
+</div>
+</div>
+
+<div class="card text-center shadow-lg border-0 rounded-4 mx-auto my-4" style="max-width: 700px;">
+  <div class="card-body p-4">
+
+    <h3 class="card-title fw-bold text-danger mb-3">
+      Why BloodBridge?
+    </h3>
+
+    <p class="card-text fs-5 text-muted">
+      Fast request handling, live blood stock, donor records, patient records and admin dashboard.
+    </p>
+
+  </div>
+</div>
+</section>
+
+<div class="container"><div class="cards"><div class="card"><h3>Donor Management</h3><p>Add donor details and automatically increase blood stock.</p></div><div class="card"><h3>Patient Request</h3><p>Patients can submit blood requests with required units.</p></div><div class="card"><h3>Admin Dashboard</h3><p>Approve or reject requests and monitor blood inventory.</p></div></div></div>
+{% comment %} ======================================= {% endcomment %}
+  <br>
+  <br>
+
+  <div class="banner_right text-center">
+
+    <h1 class="fw-bold mb-5">
+        <span class="text-danger">Donate Blood</span> 
+        Give the Gift of Life
+    </h1>
+
+    <div class="d-flex justify-content-center gap-4 flex-wrap search_option">
+
+ 
+{% comment %} <div class="d-flex justify-content-center">
+
+    <div class="bg-danger text-white rounded-circle d-flex flex-column justify-content-center align-items-center text-center shadow"
+         style="width: 160px; height: 140px;">
+         
+
+        <i class="fa fa-tint fs-2 mb-2"></i>
+        <span class="fw-semibold small">Request Blood Bank</span> 
+
+    </div>
+
+</div> {% endcomment %}
+
+
+<div class="d-flex justify-content-center">
+
+  <a href="{% url 'patient_login' %}"
+     class="bg-danger text-white rounded-circle d-flex flex-column justify-content-center align-items-center text-center shadow text-decoration-none"
+     style="width: 160px; height: 140px;">
+
+    <i class="fa fa-tint fs-2 mb-2"></i>
+    <span class="fw-semibold small">Request Blood Bank</span>
+
+  </a>
+
+</div>
+
+        <!-- Circle 2 -->
+   
+<div class="bg-primary text-white rounded-circle d-flex flex-column justify-content-center align-items-center text-center shadow"
+     style="width: 160px; height: 140px;">
+
+<a href="{% url 'donor_login' %}"
+     class="bg-secondary text-white rounded-circle d-flex flex-column justify-content-center align-items-center text-center shadow text-decoration-none"
+     style="width: 160px; height: 140px;">
+    <i class="fa fa-user fs-2 mb-2"></i>
+    <span class="fw-semibold small">Donate Blood</span>
+</a>
+</div>
+    
+
+</div>
+</div>
+
+    <br>
+    <br>
+    <section id="Second_section" class="py-5 bg-light">
+
+    <div class="container">
+
+        <div class="row align-items-center g-4">
+
+            <!-- Left Side -->
+            <div class="col-lg-5 text-center text-lg-start">
+                <h2 class="fw-bold mb-3">Why Should I Donate Blood?</h2>
+
+     <img src="{% static 'css/Images/donate.png' %}" alt="Donate"
+                     alt="Donate Blood"
+                     class="img-fluid rounded-4 h-30 shadow">
+            </div>
+
+            <!-- Right Side -->
+            <div class="col-lg-7">
+
+                <p class="lead fw-bold mb-4 text-dark">
+                    There are many reasons why donating blood is a worthwhile and valuable endeavor.
+                            
+                </p>
+
+                <div class="vstack gap-3">
+
+                    <div class="p-3 bg-white rounded-3 shadow-sm">
+                        Blood transfusions are critical for saving the lives of people who have lost significant amounts
+                        of blood due to accidents, surgeries, or illnesses like cancer or anemia.
+                    </div>
+
+                    <div class="p-3 bg-white rounded-3 shadow-sm">
+                        Donating blood is a relatively easy process that takes about an hour from start to finish.
+                        Most people can donate blood without experiencing any adverse effects, and the process itself is generally painless.
+                    </div>
+
+                    <div class="p-3 bg-white rounded-3 shadow-sm">
+                        Donating blood can actually have health benefits for the donor. Studies show it may reduce risk
+                        of heart disease, lower blood pressure, and improve cardiovascular health.
+                    </div>
+
+                    <div class="p-3 bg-white rounded-3 shadow-sm">
+                        Many complex medical and surgical procedures and cancer patients depend on blood donations.
+                    </div>
+
+                </div>
+
+                <div class="mt-4 p-4 bg-white  rounded-3 shadow">
+               Blood transfusions are necessary for many medical procedures and can save lives in emergency
+                    situations, surgeries, and treatments for diseases like cancer, sickle cell anemia, and blood
+                    disorders. Donating blood is a relatively simple and safe process that involves screening for
+                    eligibility, testing for blood type and diseases, and drawing blood from the arm. The blood is then
+                    processed and stored until it is needed for transfusions. Donors can typically donate every 56 days,
+                    and there are eligibility requirements to ensure the safety of both the donor and the recipient.
+                    Donating blood is a selfless act that can help save lives and improve the health of others.
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+    <section id="total_section">
+    <div class="container py-4">
+
+    <div class="row text-center g-3 justify-content-center top_area">
+
+        <!-- Box 1 -->
+        <div class="col-6 col-md-3">
+            <div class="p-3 bg-light rounded-4 shadow-sm h-100">
+                <img src="https://cdn-icons-png.flaticon.com/512/893/893529.png" height="40" class="mb-2">
+                <h3 class="fw-bold mb-0">4</h3>
+                <p class="mb-0 text-muted">Donation Camp</p>
+            </div>
+        </div>
+
+        <!-- Box 2 -->
+        <div class="col-6 col-md-3">
+            <div class="p-3 bg-light rounded-4 shadow-sm h-100">
+                <img src="https://cdn-icons-png.flaticon.com/512/2719/2719707.png" height="40" class="mb-2">
+                <h3 class="fw-bold mb-0">42</h3>
+                <p class="mb-0 text-muted">Raise Fund</p>
+            </div>
+        </div>
+
+        <!-- Box 3 -->
+        <div class="col-6 col-md-3">
+            <div class="p-3 bg-light rounded-4 shadow-sm h-100">
+                <img src="https://cdn-icons-png.flaticon.com/512/3202/3202665.png" height="40" class="mb-2">
+                <h3 class="fw-bold mb-0">24</h3>
+                <p class="mb-0 text-muted">Life Saved</p>
+            </div>
+        </div>
+
+        <!-- Box 4 -->
+        <div class="col-6 col-md-3">
+            <div class="p-3 bg-light rounded-4 shadow-sm h-100">
+                <img src="https://cdn-icons-png.flaticon.com/512/921/921356.png" height="40" class="mb-2">
+                <h3 class="fw-bold mb-0">4370</h3>
+                <p class="mb-0 text-muted">Best Volunteers</p>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="container py-5">
+
+    <div class="row align-items-center g-4 bottom_area">
+
+        <!-- Image Side -->
+        <div class="col-lg-6">
+            <img src="https://media.gettyimages.com/id/539205455/photo/close-up-of-man-hand-on-blood-donation.jpg?s=612x612&w=0&k=20&c=Zg4Rrfv7KeGaLVVDjnrbvLRBBCF9PwpPC8jKNnO_nmk="
+                 alt="Blood Donation"
+                 class="img-fluid rounded-4 shadow">
+        </div>
+
+        <!-- Content Side -->
+        <div class="col-lg-6">
+
+            <div class="p-4 bg-white rounded-4 shadow-sm h-100">
+
+                <h2 class="fw-bold text-danger mb-3">
+                    Blood Donation in India
+                </h2>
+
+                <p class="text-muted">
+                    Blood donation in India plays a vital role in saving countless lives. Voluntary donors provide safe blood for patients in need, including surgeries, accidents, and people with blood disorders. Awareness campaigns encourage citizens to donate regularly, ensuring a steady and safe supply in hospitals. Every donation is a life saved.
+                </p>
+
+                <a href="/faq" class="btn btn-danger mt-2">
+                    Blood Donation FAQ
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+    </section>
+    <section id="tips_Section" class="py-5 bg-light">
+    <div class="container">
+
+        <!-- Section Heading -->
+        <h2 class="text-center fw-bold mt-12 mb-5 text-danger">How To Make Your Blood Drive Successfully</h2>
+
+        <div class="row align-items-center g-4">
+
+            <!-- Left Image -->
+            <div class="col-md-5 text-center">
+     <img src="{% static 'css/Images/blooddrive.png' %}"  
+
+                
+                alt="Donate" class="img-fluid rounded-3 shadow-sm"> 
+               
+            
+{% comment %} <img src="{% static 'Images/blooddrive.png' %}"
+     alt="Donate"
+     class="img-fluid rounded-3 shadow-sm"> {% endcomment %}
+
+
+            </div>
+
+            <!-- Right Tips Boxes -->
+            <div class="col-md-7">
+
+                <!-- Tip 1 -->
+                <div class="d-flex mb-4">
+                    <div class="me-3 text-danger fs-3">
+                        <i class="fa fa-clock"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold">Plan Ahead</h5>
+                        <p class="mb-0 text-secondary">
+                            Start planning your blood drive at least 3-6 months in advance to give yourself enough time to organize everything.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tip 2 -->
+                <div class="d-flex mb-4">
+                    <div class="me-3 text-danger fs-3">
+                        <i class="fa fa-arrow-right"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold">Set Goals</h5>
+                        <p class="mb-0 text-secondary">
+                            Determine a reasonable amount of donors you hope show up to give.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tip 3 -->
+                <div class="d-flex mb-4">
+                    <div class="me-3 text-danger fs-3">
+                        <i class="fa fa-user-secret"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold">Start Signing Up Donors</h5>
+                        <p class="mb-0 text-secondary">
+                            Through signs, word-of-mouth, emails and more, let others near you know what is going on.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tip 4 -->
+                <div class="d-flex mb-4">
+                    <div class="me-3 text-danger fs-3">
+                        <i class="fa fa-gift"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold">Provide Incentives</h5>
+                        <p class="mb-0 text-secondary">
+                            Offer incentives to donors to encourage them to participate, such as free t-shirts, snacks, or gift cards.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tip 5 -->
+                <div class="d-flex mb-4">
+                    <div class="me-3 text-danger fs-3">
+                        <i class="fa fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h5 class="fw-bold">Track Your Results</h5>
+                        <p class="mb-0 text-secondary">
+                            Keep track of the number of donors and units of blood collected, and evaluate the success of your blood drive. Use this information to improve your next blood drive.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</section>
+  
+
+      
+
+   
+
+
+
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,5 @@
+{% extends 'base.html' %}{% block content %}<div class="container"><h2>Blood Requests</h2><table><tr><th>Name</th><th>Group</th><th>Units</th><th>Date</th><th>Status</th><th>Action</th></tr>{% for r in requests %}<tr><td>{{ r.fullname }}</td><td>{{ r.bloodgroup }}</td><td>{{ r.units }}</td><td>{{ r.date }}</td><td>{{ r.status }}</td>
+<td>{% if r.status == 'Pending' %}
+<a class="btn" href="{% url 'approve' r.id %}">Approve</a>
+ <a class="btn secondary" href="{% url 'reject' r.id %}">Reject</a>
+ {% else %}-{% endif %}</td></tr>{% empty %}<tr><td colspan="6">No requests.</td></tr>{% endfor %}</table></div>{% endblock %}

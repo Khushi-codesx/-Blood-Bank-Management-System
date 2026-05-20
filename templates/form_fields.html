@@ -1,0 +1,41 @@
+<label>Full Name</label><input name="fullname" required>
+<label>Age</label>
+<input type="number" name="age" min="18" max="50" required>
+
+<label>Blood Group</label><select name="bloodgroup" required><option value="">--Select--</option><option>A+</option><option>A-</option><option>B+</option><option>B-</option><option>AB+</option><option>AB-</option><option>O+</option><option>O-</option></select>
+
+<label>Units</label>
+<select name="units" required>
+<option value="">--Select-- </option>
+<option> 1 </option>
+<option> 2 </option>
+</select>
+
+
+{% comment %} <input type="number" name="units" min="1" max="2" required> {% endcomment %}
+
+<label>Date</label><input type="date" name="date" required>
+<label>Contact</label required>
+
+<input type="text" name="phone" maxlength="10" required
+       pattern="^\d{10}$"
+       oninput="validatePhone(this)">
+       
+<script>
+function validatePhone(input) {
+    let value = input.value;
+
+    // Agar non-digit hai
+    if (/[^0-9]/.test(value)) {
+        input.setCustomValidity("Only numbers are allowed");
+    }
+    // Agar digits hain but 10 se kam ya zyada
+    else if (value.length !== 10) {
+        input.setCustomValidity("Please enter 10 digit number");
+    }
+    else {
+        input.setCustomValidity("");
+    }
+}
+</script>
+<label>Email</label><input type="email" name="email"><label>Address</label><textarea name="address"></textarea>

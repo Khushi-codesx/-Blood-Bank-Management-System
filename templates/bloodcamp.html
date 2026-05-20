@@ -1,0 +1,79 @@
+ {% extends 'base.html' %}
+  {% block content %} 
+    {% load static %}
+    <style>
+  
+
+#camp_list{ height: 100%; margin: 3% 6% 0 6%; /* top 3%, right 6%, bottom 0, left 6% */ }
+
+        #camp_list > h1{
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 35px;
+        }
+        .camp_container{
+            height:100%;
+            display: flex;
+            flex-direction: column;
+            row-gap: 30px;
+            box-shadow:  0px 0px 4px  rgba(22, 123,111, 0.5);
+            padding: 20px 80px;
+
+        }
+        .camp_box{
+            box-shadow:  0px 0px 4px  rgba(0, 0,0, 0.5); 
+            padding: 10px;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-around;
+        }
+        .camp_right{
+            width: 50%;
+      
+
+        }
+        .camp_right > h3{
+            font-size: 28px;
+            color: rgb(27, 25, 24);
+
+        }
+        .camp_right > p{
+            font-size: 19px;
+            margin-top: 10px;
+        }
+    </style>
+
+
+    <section id="camp_list">
+        <h1>Recently Camp List </h1>
+        <div class="camp_container">
+            <div class="camp_box">
+                <div class="camp_left">
+                     <img src="../static/css/banner1.jpg" alt="" height="200">
+                </div>
+                <div class="camp_right">
+                    <h3>Sankalp Indian Foundation </h3>
+                    <p>Bhagwanpur Muzaffarpur </p>
+                    <p>20th April to 25th April 2026</p>
+
+                </div>
+            </div>
+            <div class="camp_box">
+                <div class="camp_left">
+                     <img src="../static/css/banner1.jpg" alt="" height="200">
+                </div>
+                <div class="camp_right">
+                    <h3>Rotary Blood bank </h3>
+                    <p>Aamgola , Bhagwanpur </p>
+                    <p>20th May to 25th May 2026</p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+    <br>
+
+ {% endblock %}
+

@@ -1,0 +1,205 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+/* .hero-section {
+    min-height: 60vh;
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+}
+
+/* Center glass card 
+.hero-card {
+    max-width: 700px;
+    margin: auto;
+    padding: 40px 30px;
+    background-color: rgba(181, 150, 150, 0.85);
+    backdrop-filter: blur(10px);
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    color: #0b1a2a;
+}
+
+
+.hero-card h1 {
+    letter-spacing: 0.5px;
+}
+
+.hero-card p {
+    font-size: 1.2rem;
+    color: #1f2d3d;
+} 
+*/
+
+/* Glass Card Style */
+.content-box {
+    background: rgba(210, 159, 159, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+
+/* Section Title */
+.section-title {
+    text-align: center;
+    margin: 50px 0 30px;
+    font-weight: bold;
+}
+
+/* Cards */
+.card-custom {
+    border: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    transition: 0.3s;
+    height: 100%;
+}
+
+.card-custom:hover {
+    transform: translateY(-5px);
+}
+
+/* Icons */
+.icon-box {
+    font-size: 40px;
+    color: #dc3545;
+    margin-bottom: 15px;
+}
+
+</style>
+
+    <section class="hero-section d-flex align-items-center py-12 ">
+
+    <div class="container my-5 content-box">
+      <div class="row align-items-center p-4">
+  
+
+     <h1 class="fw-bold display-5 text-center" style="color:#1e3c72;">
+        About Our Blood Bank
+      </h1>
+
+      <p class="lead mt-3">
+        We are dedicated to saving lives by connecting voluntary blood donors
+        with patients in need of urgent blood supply.
+      </p>
+
+      <p class="text-muted">
+        Our mission is to ensure that no life is lost due to lack of blood.
+        We organize donation camps, maintain donor records, and spread awareness
+        about the importance of blood donation.
+      </p>
+
+      <!-- Highlights -->
+      <div class="row mt-4 g-3">
+
+        <div class="col-md-4">
+          <div class="p-2 border rounded">
+            <h6 class="text-danger fw-bold">24/7 Service</h6>
+            <small>Emergency blood support anytime</small>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="p-2 border rounded">
+            <h6 class="text-danger fw-bold">Verified Donors</h6>
+            <small>Safe and trusted blood donors</small>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="p-2 border rounded">
+            <h6 class="text-danger fw-bold">Free Camps</h6>
+            <small>Regular blood donation drives</small>
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+</section>
+  
+
+<!-- ABOUT SECTION -->
+<div class="container mt-1cd my-5 content-box">
+  <div class="row align-items-center">
+
+    <div class="col-md-6">
+      <h2>Who We Are</h2>
+      <p>
+        We are a dedicated blood donation platform committed to connecting donors
+        with those in need. Our mission is to ensure that no life is lost due to
+        shortage of blood.
+      </p>
+      <p>
+        We organize blood donation camps, manage donor records, and create awareness
+        about the importance of blood donation.
+      </p>
+    </div>
+
+    <div class="col-md-6 text-center">
+      <img src="https://cdn-icons-png.flaticon.com/512/2966/2966488.png"
+           class="img-fluid" width="300">
+    </div>
+
+  </div>
+</div>
+
+<!-- MISSION / VISION / VALUES -->
+<div class="container content-box">
+
+  <h2 class="section-title">Our Purpose</h2>
+
+  <div class="row g-4">
+
+    <div class="col-md-4">
+      <div class="card card-custom p-4 text-center">
+        <div class="icon-box">❤️</div>
+        <h4>Mission</h4>
+        <p>To provide safe and timely blood to every patient in need.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card card-custom p-4 text-center">
+        <div class="icon-box">🌍</div>
+        <h4>Vision</h4>
+        <p>A world where no life is lost due to blood shortage.</p>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card card-custom p-4 text-center">
+        <div class="icon-box">🤝</div>
+        <h4>Values</h4>
+        <p>Trust, transparency, humanity, and continuous service.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- CTA SECTION -->
+<div class="container text-center my-5 content-box">
+
+  <h3>Become a Blood Donor Today</h3>
+  <p>Your single donation can save up to 3 lives.</p>
+
+  <a href="/donarform/" class="btn btn-danger px-4">
+    Donate Now
+  </a>
+
+</div>
+
+
+
+{% endblock %}

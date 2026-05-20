@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% block content %}
+{% comment %} <div class="container">
+<div class="card">
+<h2>Gallery</h2>
+<p>This page is ready in Blood Bank Management System.</p>
+<a class="btn" href="{% url 'home' %}">Go Home</a>
+</div>
+</div> {% endcomment %}
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    body {
+        background: #f8f9fa;
+      
+    }
+    h1 {
+        text-align: center;
+        color: #dc3545;
+        margin-bottom: 10px;
+    }
+    p {
+        text-align: center;
+        color: #6c757d;
+        margin-bottom: 40px;
+    }
+    .gallery-img {
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        transition: transform 0.3s, box-shadow 0.3s;
+        width: 100%;
+        height: auto;
+    }
+    .gallery-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    }
+</style>
+
+<body>
+
+<div class="container">
+    <h1>Image Gallery</h1>
+    <p>Website layout with image gallery</p>
+
+    <div class="row g-4">
+        <div class="col-sm-6 col-md-4">
+            <img src="https://img.freepik.com/free-vector/illustration-person-donating-blood_23-2148236971.jpg?size=626&ext=jpg" class="gallery-img">
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <img src="https://img.freepik.com/free-vector/illustration-people-donating-blood_23-2148247481.jpg?size=626&ext=jpg" class="gallery-img">
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <img src="https://img.freepik.com/free-vector/world-blood-donor-day-realistic-banner_23-2149393884.jpg?size=626&ext=jpg" class="gallery-img">
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <img src="https://media.istockphoto.com/id/876847622/vector/blood-donation-vector-illustration-with-red-heart-and-drop-counter.jpg?s=612x612&w=0&k=20&c=3ItlFsNaufIUSM7_tchVkYhmqLq4Vgs3lKgRVwqLafU=" class="gallery-img">
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <img src="https://img.freepik.com/free-vector/world-blood-donation-day-concept-poster-with-blood-drop_1017-25529.jpg?size=626&ext=jpg" class="gallery-img">
+        </div>
+        <div class="col-sm-6 col-md-4">
+            <img src="https://img.freepik.com/premium-vector/blood-donor-day-icon-hand-help-blood-donation-concept_608997-437.jpg?size=626&ext=jpg" class="gallery-img">
+        </div>
+
+       
+
+           <div class="col-sm-6 col-md-4">
+            <img src="../static/vr.jpg" class="gallery-img">
+        </div>
+         
+
+            <div class="col-sm-6 col-md-4 py-5">
+            <img src="../static/banner2.jpeg" class="gallery-img">
+        </div>
+
+        <div class="col-sm-6 col-md-4 py-5">
+    <img src="../static/css/image.png" class="gallery-img">
+    
+</div>
+        <div class="col-sm-6 col-md-4 py-5">
+    <img src="../static/css/pic.png" class="gallery-img">
+    
+</div>
+      <div class="col-sm-6 col-md-4 py-5">
+    <img src="../static/css/banner1.jpg" class="gallery-img">
+    
+</div>
+    <div class="col-sm-6 col-md-4 py-5">
+    <img src="../static/css/Blood-Bank-1.jpg" class="gallery-img h-50">
+    
+</div>
+         
+    </div>
+</div>
+
+
+</body>
+
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block title %}Patient Dashboard{% endblock %}
+
+{% block content %}
+
+<div class="container" style="padding:40px;">
+
+    <!-- PAGE TITLE -->
+    <h1 style="color:#b30000;">Welcome to Our Healthcare Portal</h1>
+
+    <hr>
+
+    <!-- PATIENT CARD -->
+    <div class="card" style="
+        padding:25px;
+        border-radius:10px;
+        background:#fff5f5;
+        margin-top:20px;
+        box-shadow:0 0 10px rgba(0,0,0,0.1);
+    ">
+
+        
+        {% if request.session.role == "admin" %}
+
+    <h3>Hello Admin, Welcome to the Patient Management Panel</h3>
+
+     {% else %}
+
+       <h3>Hello {{ request.session.user_name }}</h3>
+
+       {% endif %}
+
+        {% if request.session.role != "admin" %}
+
+        <p>
+            We are here to help you find the required blood quickly and safely.
+            
+            <i class="fa-solid fa-heart-circle-plus"
+               style="color:#b30000; font-size:25px;">
+            </i>
+        </p>
+
+        <!-- REQUEST BLOOD BUTTON -->
+        <a href="{% url 'patient' %}" class="btn btn-danger">
+            Request Blood
+        </a>
+
+        <!-- HISTORY BUTTON -->
+        <a href="{% url 'patient_history' %}"
+           class="btn btn-secondary"
+           style="margin-left:10px;">
+            View Request History
+        </a>
+        {% endif %}
+
+    </div>
+
+    <!-- REQUEST HISTORY SECTION -->
+    <div id="history" style="margin-top:40px;">
+
+   
+        {% if request.session.role == "admin" %}
+    <h3 style="color:#b30000;">All Patient Requests (Admin Panel)</h3>
+{% else %}
+    <h3 style="color:#b30000;">Your Request History</h3>
+{% endif %}
+
+        <table class="table table-bordered table-striped" style="margin-top:15px;">
+
+            <thead style="background:#b30000; color:white;">
+                <tr>
+                    <th>Name</th>
+                    <th>Blood Group</th>
+                    <th>Units</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                {% for r in requests %}
+                <tr>
+                    <td>{{ r.fullname }}</td>
+                    <td>{{ r.bloodgroup }}</td>
+                    <td>{{ r.units }}</td>
+                    <td>{{ r.date }}</td>
+                    <td>
+
+                        {% if r.status == "Approved" %}
+                            <span class="badge bg-success">
+                                Approved
+                            </span>
+
+                        {% elif r.status == "Rejected" %}
+                            <span class="badge bg-danger">
+                                Rejected
+                            </span>
+
+                        {% else %}
+                            
+                             <span style="color:orange;font-weight:bold;">
+                                Pending
+                            </span>
+
+                        {% endif %}
+
+                    </td>
+                </tr>
+
+                {% empty %}
+
+                <tr>
+                    <td colspan="5" style="text-align:center;">
+                        No blood request history yet
+                    </td>
+                </tr>
+
+                {% endfor %}
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</div>
+
+{% endblock %}

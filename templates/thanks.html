@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% comment %} <div class="container">
+    <div class="card text-center thanks-card"> {% endcomment %}
+    <div class="container d-flex justify-content-center align-items-center">
+    <div class="card text-center thanks-card">
+
+        <!-- Success Icon -->
+        <div class="success-icon">
+            <i class="fa fa-check-circle"></i>
+        </div>
+
+        <h2>Thank You!</h2>
+
+        <p class="success-text">
+<i class="fa fa-smile-o smile-icon" style="font-weight:bold;font-size:25px";></i>
+
+
+
+
+    
+            Your details have been received successfully.
+        </p>
+
+        <p class="support-text">
+            <i class="fa fa-handshake-o" ></i>
+            We appreciate your support for the Blood Bank Management System.
+        </p>
+
+        <a class="btn" href="{% url 'home' %}">
+            <i class="fa fa-home"></i> Go to Home
+        </a>
+    </div>
+</div>
+
+<style>
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+.thanks-card{
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+     text-align: center;
+}
+
+
+.success-icon{
+    font-size: 80px;
+    color: #28a745;
+    margin-bottom: 20px;
+}
+
+h2{
+    color: #28a745;
+    margin-bottom: 15px;
+}
+
+.success-text,
+.support-text{
+    font-size: 18px;
+    margin: 15px 0;
+    color: #444;
+}
+
+.success-text i{
+    color: red;
+    margin-right: 8px;
+}
+
+.support-text i{
+    color: #28a745;
+    margin-right: 8px;
+}
+.smile-icon{
+    color: #28a745;
+    margin-bottom: 8px;
+}
+
+.btn{
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #28a745;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover{
+    background: #218838;
+}
+</style>
+
+<!-- Font Awesome Icons -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+{% comment %} {% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="card text-center">
+        <h2>Thank You!</h2>
+        
+        <p>
+          Your details have been received successfully.
+        </p>
+
+        <p>
+            We appreciate your support for the Blood Bank Management System.
+        </p>
+
+        <a class="btn" href="{% url 'home' %}">
+            Go to Home
+        </a>
+    </div>
+</div>
+{% endblock %} {% endcomment %}
+
+
+
+{% comment %} {% extends 'base.html' %}{% block content %}<div class="container"><div class="card"><h2>Thanks</h2><p>This page is ready in Blood Bank Management System.</p><a class="btn" href="{% url 'home' %}">Go Home</a></div></div>{% endblock %} {% endcomment %}

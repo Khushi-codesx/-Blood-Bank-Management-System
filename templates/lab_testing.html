@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="container">
+    <h2>Lab Testing Form</h2>
+
+    <div class="card" style="padding:15px; margin-top:20px;">
+        <h4>Donor Details</h4>
+
+        <p><b>Name:</b> {{ record.fullname }}</p>
+        <p><b>Age:</b> {{ record.age }}</p>
+        <p><b>Blood Group:</b> {{ record.bloodgroup }}</p>
+        <p><b>Units:</b> {{ record.units }}</p>
+        <p><b>Date:</b> {{ record.date }}</p>
+        <p><b>Status:</b> {{ record.status }}</p>
+    </div>
+
+  <hr>
+
+    <h4>Lab Test Report</h4>
+
+    <form method="POST">
+        {% csrf_token %}
+
+       
+
+<select name="hb_level" class="form-control" required>
+    <option value="">-- Select Hemoglobin Level --</option>
+    <option value="Low">Low (< 10 g/dL)</option>
+    <option value="Normal">Normal (10–14 g/dL)</option>
+    <option value="High">High (> 14 g/dL)</option>
+</select>
+
+
+<label>Blood Pressure</label>
+<select name="bp" class="form-control" required>
+     <option value="">--Select Blood Pressure --</option>
+    <option value="Low">Low</option>
+    <option value="Normal">Normal</option>
+    <option value="Prehypertension">Prehypertension</option>
+    <option value="Stage1">Stage 1</option>
+    <option value="Stage2">Stage 2</option>
+</select>
+
+ 
+  <label>Test Result</label>
+<select name="result" class="form-control" required>
+    <option value="">Select Test Result</option>
+    <option value="Fit">Fit for Donation</option>
+    <option value="Unfit">Unfit for Donation</option>
+</select>
+
+<label>Remarks</label>
+    <select name="remarks" class="form-control">
+    <option value="">--Select Remarks--</option>
+      <option value="Healthy">Healthy Donor</option>
+    <    <option value="Infection Suspected">Infection Suspected</option>
+        <option value="Temporary Unfit">Temporary Unfit</option>
+    <option value="Permanent Unfit">Permanent Unfit</option>
+    <option value="Recheck Required">Recheck Required</option>
+    <option value="Refer Doctor">Refer to Doctor</option>
+</select>
+
+        <br>
+
+        <button type="submit" class="btn btn-success">
+            Save Lab Report
+        </button>
+    </form> 
+</div>
+
+{% endblock %}
